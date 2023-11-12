@@ -39,3 +39,14 @@ INSERT INTO products (prod_name, price) VALUES
 
 set optimizer = on;
 
+EXPLAIN SELECT SUM(price*amount)
+FROM sales_1_prt_2 AS s
+JOIN products  AS p
+ON s.id_product = p.id_product
+WHERE s.id_product=3;  
+
+SELECT SUM(price*amount)
+FROM sales AS s
+JOIN products  AS p
+ON s.id_product = p.id_product
+WHERE s.id_product=2 and  sale_date < '2023-01-15' ;
